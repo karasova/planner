@@ -186,7 +186,7 @@
 
         public function update_db(){
             $this->theme = isset($_POST['theme']) ? trim($_POST['theme']) : null;
-		    $this->type = isset($_POST['type']) ? $_POST['type'] : null;
+		    $this->t = isset($_POST['type']) ? $_POST['type'] : null;
             $this->place = isset($_POST['place']) ? trim($_POST['place']) : null;
             $this->date = isset($_POST['date']) ? trim($_POST['date']) : null;
             $this->time = isset($_POST['time']) ? trim($_POST['time']) : null;
@@ -196,8 +196,8 @@
             $this->dateUpdate = date('Y-m-d-H-i-s');
 
             if(empty($this->errors)){
-                $sql = static::get_pdo()->prepare('UPDATE `'.$this->table.'` SET `theme`= ?, `type`= ?, `place`= ?, `date`= ?, `time`= ?, `duration`= ?, `comment`= ?, `dateUpdate` = ? where `id`= ? limit 1;');
-                $sql->execute(array($this->theme, $this->type, $this->place, $this->date, $this->time, $this->duration, $this->comment, $this->dateUpdate, $_GET['id']));
+                $sql = static::get_pdo()->prepare('UPDATE `'.$this->table.'` SET `theme`= ?, `type_id`= ?, `place`= ?, `date`= ?, `time`= ?, `duration_id`= ?, `comment`= ?, `updated_at` = ? where `id`= ? limit 1;');
+                $sql->execute(array($this->theme, $this->t, $this->place, $this->date, $this->time, $this->duration, $this->comment, $this->dateUpdate, $_GET['id']));
                 //header('location: index.php');
             }
         }

@@ -7,7 +7,7 @@
 <body>
     <?php
         //error_reporting(0);
-        include "planner/App/event_class.php";
+        include "planner/model/event_class.php";
 
         $events = new Event;
         if (!empty($_POST))

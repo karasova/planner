@@ -1,8 +1,8 @@
-<link rel = "stylesheet" type ="text/css" href = "planner/css/style.css">
+<link rel = "stylesheet" type ="text/css" href = "css/style.css">
 
 <?php
         //error_reporting(0);
-        include "App/event_class.php";
+        include "model/event_class.php";
 
         $event = new Event;
 

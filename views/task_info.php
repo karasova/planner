@@ -3,7 +3,7 @@
 </div>
 
 <div align = center>
-<form  method = "POST">
+<form  method = "POST" action="<?= $_SERVER['REQUEST_URI'];?>">
     <table class ="add_event">
         <tr>
             <td>
